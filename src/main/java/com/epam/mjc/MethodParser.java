@@ -1,9 +1,7 @@
 package com.epam.mjc;
 
-import com.sun.jdi.connect.Connector;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -27,14 +25,11 @@ public class MethodParser {
      * @return {@link MethodSignature} object filled with parsed values from source string
      */
     public MethodSignature parseFunction(String signatureString) {
-        String accessModifier = "";
-        String returnType = "";
-        String methodName = "";
-        String[] arguments;
-        List<MethodSignature.Argument> args;
-
-
+        String accessModifier;
+        String returnType;
+        String methodName;
         MethodSignature ms;
+
         String[] res = signatureString.substring(0, signatureString.indexOf("(")).split(" ");
 
 
